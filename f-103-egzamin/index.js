@@ -44,6 +44,7 @@ function computerMove(){
                 playFields[i].innerText = computerMark;
                 if(checkWin(computerMark)){
                     winningInfo("Przegrałeś");
+                    gameIsOn = false;
                 }else{
                     switchMove();
                 }
