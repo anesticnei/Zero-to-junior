@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/f-105-101/style.css">
+    <title>Form</title>
+</head>
+<body>
+
+    <form name="register" class="form-wrapper" onsubmit="validation()"">
+
+        <label for="name">Imię
+            <input type="text" name="name" id="name">
+            <p id="nameError" class="none" data-visible="1"></p>
+        </label>
+        
+        <label for="surname">Nazwisko
+            <input type="text" name="surname" id="surname">
+            <p id="surnameError" class="none" data-visible="2"></p>
+        </label>
+
+        <label for="sex" class="box">Płeć: 
+            <input type="radio" id="male" name="sex"  value="men">
+            <label for="male">Męzczyzna</label>
+                
+            <input type="radio" id="female" name="sex"  value="woman">
+            <label for="female">Kobieta</label>   
+        </label>
+
+        <label for="login">
+            Login:
+            <input type="text" name="login" id="login">
+            <p id="loginError" class="none" data-visible="3"></p>
+        </label>
+
+        <label for="password">
+            Password: 
+            <input type="password" name="password" id="password">
+            <p id="passwordError" class="none" data-visible="4"></p>
+        </label>
+
+        <label for="date">
+            Data urodzenia:
+            <input type="date" name="date" id="date">
+            <p id="dateError" class="none" data-visible="5"></p>
+        </label>
+
+        <input type="submit" value="Wyślij">
+
+
+    </form>
+
+    <script src="/f-105-101/app.js"></script>
+</body>
+</html>
