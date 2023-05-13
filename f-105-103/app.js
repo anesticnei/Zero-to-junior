@@ -19,26 +19,30 @@ let NUMBER_OF_MINES = 0;
 const boardElement = document.querySelector('.board');
 const mineText = document.querySelector('[data-mine-count]')
 const messageText = document.querySelector('.subtext')
+const text = document.querySelector('.text');
 
 btn1.addEventListener("click", () =>{
-  NUMBER_OF_MINES = 5;
-  mineText.textContent = NUMBER_OF_MINES;
+  text.style.display = "none";
   btnWrapper.style.display = "none";
+  NUMBER_OF_MINES = 5;
+  mineText.textContent = "Numbers of mines left: " + NUMBER_OF_MINES;
   boardElement.style.display = "inline-grid";
   
   startGame();
 })
 btn2.addEventListener("click", () =>{
-  NUMBER_OF_MINES = 10;
-  mineText.textContent = NUMBER_OF_MINES;
+  text.style.display = "none";
   btnWrapper.style.display = "none";
+  NUMBER_OF_MINES = 10;
+  mineText.textContent = "Numbers of mines left: " + NUMBER_OF_MINES;
   boardElement.style.display = "inline-grid";
   startGame();
 })
 btn3.addEventListener("click", () =>{
-  NUMBER_OF_MINES = 20;
-  mineText.textContent = NUMBER_OF_MINES;
+  text.style.display = "none";
   btnWrapper.style.display = "none";
+  NUMBER_OF_MINES = 20;
+  mineText.textContent = "Numbers of mines left: " + NUMBER_OF_MINES;
   boardElement.style.display = "inline-grid";
   startGame();
 })
@@ -71,7 +75,7 @@ function startGame() {
     const markedTilesCound = board.reduce((count, row) =>{
       return count + row.filter(tile => tile.status === TILE_STATUSES.MARKED).length
     }, 0)
-    mineText.textContent = NUMBER_OF_MINES - markedTilesCound
+    mineText.textContent = "Numbers of mines left: " + (NUMBER_OF_MINES - markedTilesCound)
   }
    
    function checkGameEnd(){
@@ -82,12 +86,29 @@ function startGame() {
       boardElement.addEventListener("click", stopProp, { capture: true})
       boardElement.addEventListener("contextmenu", stopProp, { capture: true})
     }
+
+    // const resetBtn = document.createElement("button")
+    // resetBtn.className = "reset-btn";
+    // resetBtn.innerHTML = "RESET THE GAME";
+    // messageText.appendChild(resetBtn)
+    
+    function resetReload(){
+      const resetBtn = document.createElement("button")
+      resetBtn.className = "reset-btn";
+      resetBtn.innerHTML = "RESET THE GAME";
+      messageText.appendChild(resetBtn)
+      resetBtn.style.display = "block";
+      resetBtn.addEventListener("click", () =>{
+        window.location.reload()})
+    }
+
     if(win){
-      messageText.textContent = "You Win"
-      
+      messageText.textContent = "You Win";
+      resetReload()      
     }
     if (lose){
       messageText.textContent = "You Lose"
+      resetReload()
       board.forEach(row =>{
         row.forEach(tile =>{
           if(tile.status === TILE_STATUSES.MARKED) markTile(tile)
