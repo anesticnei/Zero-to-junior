@@ -82,14 +82,20 @@ body{
    .title{
     margin: 20px;
    }
-   .sub-text{
+   .subtext{
     color: #CCC;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
    }
 
 .board {
-  display: inline-grid;
+  /* display: inline-grid; */
+  display: none;
   padding: 10px;
   grid-template-columns: repeat(var(--size), 60px);
   grid-template-rows: repeat(var(--size), 60px);
@@ -123,4 +129,26 @@ body{
 
 .board > [data-status="marked"] {
   background-color: yellow;
+}
+
+
+
+.choose_mines_number{
+  background-color: #303030;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* display: none; */
+}
+
+.btn{
+  padding: 1rem;
+  border: 2px solid black;
+  cursor: pointer;
 }
