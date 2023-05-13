@@ -67,7 +67,23 @@ export function revealTile(board, tile) {
                 tile.element.textContent = mines.length
             }
         
-}        
+}   
+
+export function checkWin(board){
+return board.every(row =>{
+    return row.every(tile =>{
+        return tile.status === TILE_STATUSES.NUMBER || (tile.mine && (tile.status === TILE_STATUSES.HIDDEN || tile.status === TILE_STATUSES.MARKED))
+    })
+})
+}
+export function checkLose(board){
+return board.some(row => {
+    return row.some(tile => {
+        return tile.status === TILE_STATUSES.MINE
+    })
+})
+
+}
 
 function getMinePositions(boardSize, numberOfMines){
     const positions = []
@@ -105,3 +121,4 @@ function nearByTiles(board, {x, y}){
 
     return tiles
 }
+
