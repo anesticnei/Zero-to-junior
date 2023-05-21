@@ -2,7 +2,7 @@
 
 # EN
 
-Welcome to my project where I share my projects, assignments, and exams that I complete during my journey from Zero to Junior.
+Welcome to my branche where I share my projects, assignments, and exams that I complete during my journey from Zero to Junior.
 
 This is an additional form of learning and practice, where I strive to learn, explore new things, and expand my knowledge.
 
