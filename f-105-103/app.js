@@ -125,35 +125,3 @@ function startGame() {
     e.stopImmediatePropagation()
   }
 }
-
-
-
-
-class Animal {
-  constructor(name){
-    this.speed = 0;
-    this.name = name;
-  }
-  run(speed){
-    this.speed = speed;
-    alert(`${this.name} run with speed ${this.speed}.`);
-  }
-  stop(){
-    this.speed = 0;
-    alert(`${this.name} stands still`)
-  }
-}
-
-let animal = new Animal ('My animal');
-
-
-class Rabit extends Animal{
-  hide(){
-    alert(`${this.name} hides!`)
-  }
-}
-
-let rabit = new Rabit("White Rabit")
-
-console.log(rabit.run(5));
-console.log(rabit.hide());
