@@ -1,0 +1,96 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   
+   body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    columns: #fff;
+    font-size: 3rem;
+    background-color: #303030;
+   }
+
+   .title{
+    margin: 20px;
+   }
+   .subtext{
+    color: #CCC;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+   }
+
+.board {
+  /* display: inline-grid; */
+  display: none;
+  padding: 10px;
+  grid-template-columns: repeat(var(--size), 60px);
+  grid-template-rows: repeat(var(--size), 60px);
+  gap: 4px;
+  background-color: #777;
+}
+
+.board > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 2px solid #bbb;
+  user-select: none;
+}
+
+.board > [data-status="hidden"] {
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.board > [data-status="mine"] {
+  background-color: red;
+}
+
+.board > [data-status="number"] {
+  background-color: none;
+}
+
+.board > [data-status="marked"] {
+  background-color: yellow;
+}
+
+
+
+.choose_mines_number{
+  background-color: #303030;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* display: none; */
+}
+
+.btn{
+  padding: 1rem;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.reset-btn{
+  display: none;
+  padding: 2rem;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+
+}
